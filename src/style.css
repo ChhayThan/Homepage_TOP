@@ -1,5 +1,249 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
 body {
-  background-color: skyblue;
-  text-align: center;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.profile-image {
+  position: relative;
+  min-width: 350px;
+}
+
+div.profile-image img {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+p.name {
+  position: absolute;
+  font-size: 2rem;
   color: white;
+  left: 60px;
+  top: 450px;
+  text-align: start;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+
+  margin: 3rem;
+}
+
+div.about {
+  display: flex;
+  flex-direction: column;
+
+  padding: 50px 50px 50px 20px;
+
+  box-shadow: 1px 3px 10px rgb(177, 177, 177);
+
+  background-color: white;
+}
+
+header div.background {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 100, 100);
+  z-index: -1;
+  clip-path: polygon(100% 0px, 100% 20%, 0 60%, 0px 0px);
+}
+
+div.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin: 3rem;
+}
+
+main h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+div.garage-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+div.item {
+  box-shadow: 1px 3px 10px rgb(177, 177, 177);
+  background-color: white;
+  transition: transform 200ms ease-in-out;
+}
+
+div.item:hover {
+  transform: scale(1.05);
+}
+
+div.item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+div.item div.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(1fr, 60px) 1fr;
+  padding: 2em;
+}
+div.item-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+div.description {
+  grid-column: span 2;
+}
+
+footer {
+  background-color: rgb(255, 100, 100);
+  color: white;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding: 3em;
+}
+footer div.contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  padding-right: 20px;
+}
+
+div.contact p {
+  font-size: 0.5em;
+}
+footer img {
+  width: 500px;
+
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 699px) {
+  div.profile-image {
+    min-width: 300px;
+  }
+
+  div.profile-image img {
+    width: 300px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 50px 50px 20px;
+    box-shadow: none;
+
+    background-color: transparent;
+  }
+  div.garage-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  main h2 {
+    color: black;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  div.profile-image {
+    width: 300px;
+  }
+  div.garage-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  main h2 {
+    color: black;
+  }
 }
