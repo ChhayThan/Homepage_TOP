@@ -1,5 +1,9 @@
 # webpackTemplate
 
+## LINK: https://chhaythan.github.io/Homepage_TOP/
+
+Created a responsive homepage, learning how to use media queries and image repsonsive techniques.
+
 Includes ESLint
 
 ## Commands
